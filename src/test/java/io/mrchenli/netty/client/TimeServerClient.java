@@ -1,5 +1,8 @@
 package io.mrchenli.netty.client;
 
+import io.mrchenli.netty.client.decoder.PojoTimeDecoder;
+import io.mrchenli.netty.client.decoder.TimeDecoder;
+import io.mrchenli.netty.client.handler.PojoTimerClientHandler;
 import io.mrchenli.netty.client.handler.TimerClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -26,7 +29,8 @@ public class TimeServerClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel socketChannel) throws Exception {
-                        socketChannel.pipeline().addLast(new TimerClientHandler());
+                        socketChannel.pipeline()
+                                .addLast(new PojoTimeDecoder(),new PojoTimerClientHandler());
                     }
                 });
         //start the client  why sync ? cause connect is not sync so we have to wait really connect

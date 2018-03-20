@@ -1,6 +1,8 @@
 package io.mrchenli.netty.server;
 
-import io.mrchenli.netty.server.handler.TimeServerHandler;
+import io.mrchenli.netty.server.encode.TimeEncoder;
+import io.mrchenli.netty.server.encode.TimeEncoder2;
+import io.mrchenli.netty.server.handler.PojoTimeServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -28,7 +30,8 @@ public class TimeServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline().addLast(new TimeServerHandler());
+                            socketChannel.pipeline()
+                                    .addLast(new TimeEncoder(),new PojoTimeServerHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG,128)
