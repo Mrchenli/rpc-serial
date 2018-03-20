@@ -1,4 +1,4 @@
-package io.mrchenli.netty.handler;
+package io.mrchenli.netty.server.handler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

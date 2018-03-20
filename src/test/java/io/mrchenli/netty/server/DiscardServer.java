@@ -1,6 +1,6 @@
 package io.mrchenli.netty.server;
 
-import io.mrchenli.netty.handler.DiscardServerHandler;
+import io.mrchenli.netty.server.handler.DiscardServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
