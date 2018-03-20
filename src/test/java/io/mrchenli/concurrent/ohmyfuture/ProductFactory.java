@@ -6,8 +6,11 @@ public class ProductFactory {
 
     public MyFuture createProduct(String name){
         MyFuture f = new MyFuture();
-        Product p = new Product(new Random().nextInt(),name);
-        f.setProduct(p);
+        new Thread(() -> {
+            Product p = new Product(new Random().nextInt(),name);
+            f.setProduct(p);
+        }).start();
+        System.out.println("收到订单...你可以去上班了");
         return f;
     }
 

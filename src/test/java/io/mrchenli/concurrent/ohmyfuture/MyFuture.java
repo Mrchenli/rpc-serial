@@ -1,11 +1,20 @@
 package io.mrchenli.concurrent.ohmyfuture;
 
-import lombok.Data;
-
 /**
  * 订单
  */
-@Data
 public class MyFuture {
-    private Product product;
+    private  Product product;
+
+    public synchronized void setProduct(Product product) {
+        this.product = product;
+        notifyAll();
+    }
+
+    public synchronized Product get() throws InterruptedException {
+        while (product==null){//这样会占用cpu资源
+            wait();
+        }
+        return product;
+    }
 }
