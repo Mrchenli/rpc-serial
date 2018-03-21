@@ -19,6 +19,7 @@ public class VolatileTest {
         System.out.println("等待 volatile set true");
         while (!volatilePojo.isFlag()){//只有被修改后才能过去
 
+
         }
         System.out.println("volatile passed");
 

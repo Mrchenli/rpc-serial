@@ -24,11 +24,5 @@ public class Product {
         System.out.println(name+" 生产完成");
     }
 
-    public static void main(String[] args) {
-        ProductFactory pf = new ProductFactory();
-        Product p = new Product(1,"cake");
-        System.out.println("i'm working and will take it later...");
-        System.out.println("take cake home...");
-    }
 
 }
