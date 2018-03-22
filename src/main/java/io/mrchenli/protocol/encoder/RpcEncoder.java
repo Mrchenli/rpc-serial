@@ -1,5 +1,6 @@
-package io.mrchenli.protocol;
+package io.mrchenli.protocol.encoder;
 
+import io.mrchenli.protocol.request.RpcRequest;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

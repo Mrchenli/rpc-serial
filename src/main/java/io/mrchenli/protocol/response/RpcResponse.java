@@ -1,4 +1,4 @@
-package io.mrchenli.protocol;
+package io.mrchenli.protocol.response;
 
 /**
  * 怎么定义一个response呢

@@ -1,7 +1,7 @@
 package io.mrchenli.server;
 
-import io.mrchenli.protocol.RpcDecoder;
-import io.mrchenli.protocol.RpcEncoder;
+import io.mrchenli.protocol.decoder.RpcDecoder;
+import io.mrchenli.protocol.encoder.RpcEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
