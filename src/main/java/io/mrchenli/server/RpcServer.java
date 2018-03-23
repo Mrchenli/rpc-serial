@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * rpc 里面的服务要用什么来做容器?key value 是什么?
  * 1.用netty 打通网络
  * 2.约定协议
  * 3.服务注册
@@ -54,6 +55,10 @@ public class RpcServer {
             boss.shutdownGracefully();
             worker.shutdownGracefully();
         }
+    }
+
+    public static void main(String[] args) {
+        RpcServer rpcServer = new RpcServer(8080);
     }
 
 }

@@ -13,6 +13,4 @@ public class RpcRequest {
     private String args;//todo 这个怎么定义
 
 
-
-
 }
