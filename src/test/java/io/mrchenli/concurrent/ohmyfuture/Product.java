@@ -1,6 +1,5 @@
 package io.mrchenli.concurrent.ohmyfuture;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 

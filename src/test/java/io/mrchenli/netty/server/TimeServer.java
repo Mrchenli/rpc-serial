@@ -26,7 +26,7 @@ public class TimeServer {
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(boss,worker)
-                    .channel(NioServerSocketChannel.class)
+                    .channel(NioServerSocketChannel.class)//acceptor
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
@@ -35,7 +35,7 @@ public class TimeServer {
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG,128)
-                    .childOption(ChannelOption.SO_KEEPALIVE,true);
+                    .childOption( ChannelOption.SO_KEEPALIVE,true);
             ChannelFuture future = bootstrap.bind(port).sync();
             future.channel().closeFuture().sync();
         }catch (Exception e){
