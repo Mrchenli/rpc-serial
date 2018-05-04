@@ -1,4 +1,4 @@
-package io.mrchenli.protocol.request;
+package io.mrchenli.protocol;
 
 /**
  * 怎么定义一个request 呢
